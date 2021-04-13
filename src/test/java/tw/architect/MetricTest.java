@@ -26,8 +26,8 @@ public class MetricTest {
     }
 
     @Test
-    public void testIf100centimetersIsEqualTo0Point1kilometers() {
-        Metrics metric1 = new Metrics(MetricTypes.CENTIMETER.getMetricType(), 100);
+    public void testIf100metersIsEqualTo0Point1kilometers() {
+        Metrics metric1 = new Metrics(MetricTypes.METER.getMetricType(), 100);
         Metrics metric2 = new Metrics(MetricTypes.KILOMETER.getMetricType(), 0.1);
 
         metric1.conversionOfMetricType(metric1,metric2);
