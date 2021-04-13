@@ -42,11 +42,23 @@ public class MetricTest {
         Metrics metric2 = new Metrics(MetricTypes.CENTIMETER.getMetricType(), 100);
         Metrics expectedSum= new Metrics(MetricTypes.METER.getMetricType(), 2);
 
-        metric1.conversionOfMetricType(expectedSum,metric1);
         metric2.conversionOfMetricType(expectedSum,metric2);
         double actualValue = metric1.add(metric1,metric2);
 
         assertEquals(2,actualValue);
+
+    }
+
+    @Test
+    public void testIfSumOf200centimeterAnd1kilometerIsEqualTo100200centimeter() {
+        Metrics metric1 = new Metrics(MetricTypes.CENTIMETER.getMetricType(), 200);
+        Metrics metric2 = new Metrics(MetricTypes.KILOMETER.getMetricType(), 1);
+        Metrics expectedSum= new Metrics(MetricTypes.CENTIMETER.getMetricType(), 100200);
+
+        metric2.conversionOfMetricType(expectedSum,metric2);
+        double actualValue = metric1.add(metric1,metric2);
+
+        assertEquals(100200,actualValue);
 
     }
 }
