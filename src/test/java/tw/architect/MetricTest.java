@@ -66,11 +66,13 @@ public class MetricTest {
     public void testIfDifferenceOf1meterAnd50centimeterIsEqualTo0Point5meter() {
         Metrics metric1 = new Metrics(MetricTypes.METER.getMetricType(), 1);
         Metrics metric2 = new Metrics(MetricTypes.CENTIMETER.getMetricType(), 50);
-        Metrics expectedSum= new Metrics(MetricTypes.METER.getMetricType(), 0.5);
+        Metrics expectedValue= new Metrics(MetricTypes.METER.getMetricType(), 0.5);
 
-        metric2.conversionOfMetricType(expectedSum,metric2);
+        metric2.conversionOfMetricType(expectedValue,metric2);
         double actualValue = metric1.subtract(metric1,metric2);
 
         assertEquals(0.5,actualValue);
     }
+
+
 }
