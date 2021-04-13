@@ -2,6 +2,7 @@ package tw.architect;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MetricTest {
@@ -33,5 +34,19 @@ public class MetricTest {
         metric1.conversionOfMetricType(metric1,metric2);
 
         assertTrue(metric1.equals(metric2));
+    }
+
+    @Test
+    public void testIfSumOf1meterAnd100centimeterIsEqualTo2meters() {
+        Metrics metric1 = new Metrics(MetricTypes.METER.getMetricType(), 1);
+        Metrics metric2 = new Metrics(MetricTypes.CENTIMETER.getMetricType(), 100);
+        Metrics expectedSum= new Metrics(MetricTypes.METER.getMetricType(), 2);
+
+        metric1.conversionOfMetricType(expectedSum,metric1);
+        metric2.conversionOfMetricType(expectedSum,metric2);
+        double actualValue = metric1.add(metric1,metric2);
+
+        assertEquals(2,actualValue);
+
     }
 }
