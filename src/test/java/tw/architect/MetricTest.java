@@ -74,5 +74,15 @@ public class MetricTest {
         assertEquals(0.5,actualValue);
     }
 
+    @Test
+    public void testIfDifferenceOf2000centimeterAnd1meterIsEqualTo1900centimeter() {
+        Metrics metric1 = new Metrics(MetricTypes.CENTIMETER.getMetricType(), 2000);
+        Metrics metric2 = new Metrics(MetricTypes.METER.getMetricType(), 1);
+        Metrics expectedValue= new Metrics(MetricTypes.CENTIMETER.getMetricType(), 1900);
 
+        metric2.conversionOfMetricType(expectedValue,metric2);
+        double actualValue = metric1.subtract(metric1,metric2);
+
+        assertEquals(1900,actualValue);
+    }
 }
