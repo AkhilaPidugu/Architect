@@ -40,4 +40,8 @@ public class Metrics {
     public double add(Metrics metric1, Metrics metric2) {
         return metric1.metricValue+metric2.metricValue;
     }
+
+    public double subtract(Metrics metric1, Metrics metric2) {
+        return metric1.metricValue-metric2.metricValue;
+    }
 }
