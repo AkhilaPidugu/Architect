@@ -20,4 +20,11 @@ public class Weights {
     public int hashCode() {
         return Objects.hash(weightMetricType, weightMetricValue);
     }
+
+    public void conversionOfWeightMetricType(Weights weightMetric1, Weights weightMetric2) {
+        if(weightMetric1.weightMetricType == WeightMetricTypes.KILOGRAM.getWeightMetricType() && weightMetric2.weightMetricType == WeightMetricTypes.GRAM.getWeightMetricType()){
+            weightMetric2.weightMetricValue = weightMetric2.weightMetricValue/1000;
+            weightMetric2.weightMetricType = WeightMetricTypes.KILOGRAM.getWeightMetricType();
+        }
+    }
 }
