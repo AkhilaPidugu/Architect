@@ -22,7 +22,7 @@ public class WeightsTest
         Weights weightMetric1 = new Weights(WeightMetricTypes.KILOGRAM.getWeightMetricType(), 0.1);
         Weights weightMetric2 = new Weights(WeightMetricTypes.GRAM.getWeightMetricType(),100);
 
-        weightMetric1.conversionOfWeightMetricType(weightMetric1,weightMetric2);
+        weightMetric1.conversionOfMetricType(weightMetric1,weightMetric2);
 
         assertTrue(weightMetric1.equals(weightMetric2));
     }
@@ -33,7 +33,7 @@ public class WeightsTest
         Weights weightMetric2 = new Weights(WeightMetricTypes.KILOGRAM.getWeightMetricType(),1);
         Weights expectedSum= new Weights(WeightMetricTypes.GRAM.getWeightMetricType(), 1010);
 
-       weightMetric2.conversionOfWeightMetricType(expectedSum,weightMetric2);
+       weightMetric2.conversionOfMetricType(expectedSum,weightMetric2);
         double actualValue = weightMetric1.add(weightMetric1,weightMetric2);
 
         assertEquals(1010,actualValue);
@@ -45,9 +45,10 @@ public class WeightsTest
         Weights weightMetric2 = new Weights(WeightMetricTypes.GRAM.getWeightMetricType(),500);
         Weights expectedValue= new Weights(WeightMetricTypes.KILOGRAM.getWeightMetricType(), 1);
 
-        weightMetric2.conversionOfWeightMetricType(expectedValue,weightMetric2);
+        weightMetric2.conversionOfMetricType(expectedValue,weightMetric2);
         double actualValue = weightMetric1.subtract(weightMetric1,weightMetric2);
 
         assertEquals(1,actualValue);
     }
+
 }

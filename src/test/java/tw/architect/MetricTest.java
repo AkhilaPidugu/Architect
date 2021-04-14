@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MetricTest {
     @Test
     public void testIf1centimeterIsEqualTo1centimeter() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 1);
-        Metrics metric2 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 1);
+        Length metric1 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 1);
+        Length metric2 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 1);
 
         boolean actualValue = metric1.equals(metric2);
 
@@ -18,8 +18,8 @@ public class MetricTest {
 
     @Test
     public void testIf1meterIsEqualTo100centimeters() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.METER.getMetricType(), 1);
-        Metrics metric2 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 100);
+        Length metric1 = new Length(LengthMetricTypes.METER.getMetricType(), 1);
+        Length metric2 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 100);
 
         metric1.conversionOfMetricType(metric1,metric2);
 
@@ -28,8 +28,8 @@ public class MetricTest {
 
     @Test
     public void testIf100metersIsEqualTo0Point1kilometers() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.METER.getMetricType(), 100);
-        Metrics metric2 = new Metrics(LengthMetricTypes.KILOMETER.getMetricType(), 0.1);
+        Length metric1 = new Length(LengthMetricTypes.METER.getMetricType(), 100);
+        Length metric2 = new Length(LengthMetricTypes.KILOMETER.getMetricType(), 0.1);
 
         metric1.conversionOfMetricType(metric1,metric2);
 
@@ -38,9 +38,9 @@ public class MetricTest {
 
     @Test
     public void testIfSumOf1meterAnd100centimeterIsEqualTo2meters() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.METER.getMetricType(), 1);
-        Metrics metric2 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 100);
-        Metrics expectedSum= new Metrics(LengthMetricTypes.METER.getMetricType(), 2);
+        Length metric1 = new Length(LengthMetricTypes.METER.getMetricType(), 1);
+        Length metric2 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 100);
+        Length expectedSum= new Length(LengthMetricTypes.METER.getMetricType(), 2);
 
         metric2.conversionOfMetricType(expectedSum,metric2);
         double actualValue = metric1.add(metric1,metric2);
@@ -51,9 +51,9 @@ public class MetricTest {
 
     @Test
     public void testIfSumOf200centimeterAnd1kilometerIsEqualTo100200centimeter() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 200);
-        Metrics metric2 = new Metrics(LengthMetricTypes.KILOMETER.getMetricType(), 1);
-        Metrics expectedSum= new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 100200);
+        Length metric1 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 200);
+        Length metric2 = new Length(LengthMetricTypes.KILOMETER.getMetricType(), 1);
+        Length expectedSum= new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 100200);
 
         metric2.conversionOfMetricType(expectedSum,metric2);
         double actualValue = metric1.add(metric1,metric2);
@@ -64,9 +64,9 @@ public class MetricTest {
 
     @Test
     public void testIfDifferenceOf1meterAnd50centimeterIsEqualTo0Point5meter() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.METER.getMetricType(), 1);
-        Metrics metric2 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 50);
-        Metrics expectedValue= new Metrics(LengthMetricTypes.METER.getMetricType(), 0.5);
+        Length metric1 = new Length(LengthMetricTypes.METER.getMetricType(), 1);
+        Length metric2 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 50);
+        Length expectedValue= new Length(LengthMetricTypes.METER.getMetricType(), 0.5);
 
         metric2.conversionOfMetricType(expectedValue,metric2);
         double actualValue = metric1.subtract(metric1,metric2);
@@ -76,9 +76,9 @@ public class MetricTest {
 
     @Test
     public void testIfDifferenceOf2000centimeterAnd1meterIsEqualTo1900centimeter() {
-        Metrics metric1 = new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 2000);
-        Metrics metric2 = new Metrics(LengthMetricTypes.METER.getMetricType(), 1);
-        Metrics expectedValue= new Metrics(LengthMetricTypes.CENTIMETER.getMetricType(), 1900);
+        Length metric1 = new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 2000);
+        Length metric2 = new Length(LengthMetricTypes.METER.getMetricType(), 1);
+        Length expectedValue= new Length(LengthMetricTypes.CENTIMETER.getMetricType(), 1900);
 
         metric2.conversionOfMetricType(expectedValue,metric2);
         double actualValue = metric1.subtract(metric1,metric2);
