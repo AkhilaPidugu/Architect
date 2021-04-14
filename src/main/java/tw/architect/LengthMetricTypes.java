@@ -1,12 +1,12 @@
 package tw.architect;
 
-public enum MetricTypes {
+public enum LengthMetricTypes {
     CENTIMETER("Centimeter"),
     METER("Meter"),
     KILOMETER("Kilometer");
     String metricType;
 
-    MetricTypes(String metricType) {
+    LengthMetricTypes(String metricType) {
         this.metricType = metricType;
     }
 
