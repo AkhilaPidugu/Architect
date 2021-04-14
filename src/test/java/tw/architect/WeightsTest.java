@@ -38,4 +38,16 @@ public class WeightsTest
 
         assertEquals(1010,actualValue);
     }
+
+    @Test
+    public void testIfDifferenceOf1Point5kilogramAnd500gramIsEqualTo1kilogram() {
+        Weights weightMetric1 = new Weights(WeightMetricTypes.KILOGRAM.getWeightMetricType(), 1.5);
+        Weights weightMetric2 = new Weights(WeightMetricTypes.GRAM.getWeightMetricType(),500);
+        Weights expectedValue= new Weights(WeightMetricTypes.KILOGRAM.getWeightMetricType(), 1);
+
+        weightMetric2.conversionOfWeightMetricType(expectedValue,weightMetric2);
+        double actualValue = weightMetric1.subtract(weightMetric1,weightMetric2);
+
+        assertEquals(1,actualValue);
+    }
 }

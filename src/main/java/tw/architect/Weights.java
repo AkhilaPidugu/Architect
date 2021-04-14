@@ -35,4 +35,8 @@ public class Weights {
     public double add(Weights weightMetric1, Weights weightMetric2) {
         return weightMetric1.weightMetricValue+weightMetric2.weightMetricValue;
     }
+
+    public double subtract(Weights weightMetric1, Weights weightMetric2) {
+        return weightMetric1.weightMetricValue-weightMetric2.weightMetricValue;
+    }
 }
