@@ -26,5 +26,13 @@ public class Weights {
             weightMetric2.weightMetricValue = weightMetric2.weightMetricValue/1000;
             weightMetric2.weightMetricType = WeightMetricTypes.KILOGRAM.getWeightMetricType();
         }
+        else if(weightMetric1.weightMetricType == WeightMetricTypes.GRAM.getWeightMetricType() && weightMetric2.weightMetricType == WeightMetricTypes.KILOGRAM.getWeightMetricType()){
+            weightMetric2.weightMetricValue = weightMetric2.weightMetricValue*1000;
+            weightMetric2.weightMetricType = WeightMetricTypes.GRAM.getWeightMetricType();
+        }
+    }
+
+    public double add(Weights weightMetric1, Weights weightMetric2) {
+        return weightMetric1.weightMetricValue+weightMetric2.weightMetricValue;
     }
 }

@@ -2,6 +2,7 @@ package tw.architect;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class WeightsTest
@@ -24,5 +25,17 @@ public class WeightsTest
         weightMetric1.conversionOfWeightMetricType(weightMetric1,weightMetric2);
 
         assertTrue(weightMetric1.equals(weightMetric2));
+    }
+
+    @Test
+    public void testIfSumOf10gramsAnd1kilogramIsEqualTo1010grams() {
+        Weights weightMetric1 = new Weights(WeightMetricTypes.GRAM.getWeightMetricType(), 10);
+        Weights weightMetric2 = new Weights(WeightMetricTypes.KILOGRAM.getWeightMetricType(),1);
+        Weights expectedSum= new Weights(WeightMetricTypes.GRAM.getWeightMetricType(), 1010);
+
+       weightMetric2.conversionOfWeightMetricType(expectedSum,weightMetric2);
+        double actualValue = weightMetric1.add(weightMetric1,weightMetric2);
+
+        assertEquals(1010,actualValue);
     }
 }
