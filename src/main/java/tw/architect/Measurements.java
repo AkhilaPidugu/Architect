@@ -39,6 +39,10 @@ public class Measurements<T extends Measurements> {
             metric2.metricValue = metric2.metricValue-32;
             metric2.metricType = TemperatureMetricTypes.CELSIUS.getMetricType();
         }
+        else if(metric1.metricType == TemperatureMetricTypes.KELVIN.getMetricType() && metric2.metricType == TemperatureMetricTypes.CELSIUS.getMetricType()){
+            metric2.metricValue = metric2.metricValue+273;
+            metric2.metricType = TemperatureMetricTypes.KELVIN.getMetricType();
+        }
     }
 
     @Override
