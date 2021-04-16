@@ -35,6 +35,10 @@ public class Measurements<T extends Measurements> {
             metric2.metricValue = metric2.metricValue*1000;
             metric2.metricType = WeightMetricTypes.GRAM.getWeightMetricType();
         }
+        else if(metric1.metricType == TemperatureMetricTypes.CELSIUS.getMetricType() && metric2.metricType == TemperatureMetricTypes.FAHRENHEIT.getMetricType()){
+            metric2.metricValue = metric2.metricValue-32;
+            metric2.metricType = TemperatureMetricTypes.CELSIUS.getMetricType();
+        }
     }
 
     @Override
