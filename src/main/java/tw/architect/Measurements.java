@@ -14,6 +14,7 @@ public class Measurements<T extends Measurements> {
         if(metric1.metricType == LengthMetricTypes.METER.getMetricType() && metric2.metricType == LengthMetricTypes.CENTIMETER.getMetricType()){
             metric2.metricValue = metric2.metricValue/100;
             metric2.metricType = LengthMetricTypes.METER.getMetricType();
+            System.out.println(metric1.metricValue);
         }
         else  if(metric1.metricType == LengthMetricTypes.METER.getMetricType() && metric2.metricType == LengthMetricTypes.KILOMETER.getMetricType()){
             metric2.metricValue = metric2.metricValue*1000;
